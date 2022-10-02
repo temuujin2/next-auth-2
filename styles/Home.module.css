@@ -1,86 +1,90 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* ======= Home page ========= */
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: fit-content;
-}
 
-.hero {
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-image: url(../images/brooke-cagle.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.middle_section_wrapp {
-  width: 100vw;
-  height: 600px;
-  /* background-color: aqua; */
-}
-/* --------------------------- */
-.main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-}
 /* ========================= */
 .nav {
-  width: 100%;
-
   display: flex;
-  justify-content: center;  
-}
-.nav_wrapp {
+  justify-content: center;
+  position: sticky;
   z-index: 10;
+}
+
+.nav_wrapp {
   color: gray;
   margin-top: 20px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 80%;
 }
-.nav_wrapp b {
+.logo {
   display: flex;
   font-size: 35px;
   font-weight: 700;
   font-family: 'Mulish', sans-serif;
 }
-.nav b > div {
+.logo > div {
   margin-top: 27px;
   margin-left: 1px;
   width: 8px;
   height: 8px;
-  background: green;
+  background: #0BBEF2;
 }
 .menu {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
   gap: 50px;
   font-weight: 300;
 }
+
 /* ------------------------- */
 .top_section_wrapp {
   width: 100%;
   height: fit-content;
-  /* background: red; */
 
 }
 .in_wrapp {
-  height: 10000px;
-  width: 100%;
   background-color: #F5F5F5;
 }
 /* ------------------------- */
+/* ======= Home page ========= */
+.bgWrap {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+/* --------------------------- */
+.main_content_wrapp {
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+
+}
+.left_side_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.left_side_content h1 {
+  font-size: 50px;
+}
+.left_side_content p {
+  width: 50%;
+  line-height: 30px;
+}
+.right_side_content {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: fit-content;
+  position: relative;
+}
+/* --------------------------- */
 .post_wrapp {
   display: flex;
   align-items: center;
@@ -108,8 +112,7 @@
   color: var(--button-text);
 }
 .post_header form {
-  margin-top: 20px;
-  
+  margin-top: 35px;
 }
 .post_header form input {
   width: 300px;
@@ -140,7 +143,6 @@
   transform: scale(1);
 }
 .img_wrapp {
-  width: 100%;
   height: 35%;
   overflow: hidden;
 }
@@ -194,4 +196,95 @@
   display: flex;
   gap:  20px;
   
+}
+/* ========= Footer ============ */
+.footer_wrapp {
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  /* width: 100%; */
+  height: fit-content;
+  background: #252B3B;
+}
+.footer_width {
+  width: 80%;
+  padding: 40px 0;
+  gap: 20px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+}
+.footer_width a:hover {
+  color: #0BBEF2;
+  transform: translate(2px);
+  transition: all 0.1s ease-in-out;
+}
+.column_text {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 15.8px;
+  font-size: 20px;
+}
+.column_text_social {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.column_text_social a,
+.column_text a {
+  font-size: 14px;
+  font-weight: 200;
+}
+.logo_2 {
+  display: flex;
+  font-size: 35px;
+  font-weight: 700;
+  font-family: 'Mulish', sans-serif;
+  color: white;
+}
+.logo_2 > div {
+  margin-top: 27px;
+  margin-left: 1px;
+  width: 8px;
+  height: 8px;
+  background: #0BBEF2;
+}
+/* ======== responsive sizes ========= */
+@media (max-width: 1200px) {
+  .footer_width {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 80px;
+    text-align: center;
+  }
+}
+@media (max-width: 1000px) {
+  .post_header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .post_header form {
+    margin: 20px 0;
+  }
+  .search_product {
+    margin-top: -30px;
+  }
+  .menu {
+    gap: 38px;
+  }
+}
+@media (max-width: 800px) {
+  .menu {
+    gap: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .menu {
+    display: none;
+  }
 }

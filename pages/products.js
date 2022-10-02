@@ -84,7 +84,7 @@ export default function Products({data}) {
           <h2>Blog posts</h2>
           <p>Our latest updates and blogs about managing your team</p>
         </div>
-        <form className="search" onSubmit={handleOnSubmitSearch}>
+        <form className={styles.search_product} onSubmit={handleOnSubmitSearch}>
           <input name="query" type="search" />
           <button>Search</button>
         </form>

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../client'
 import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css'
+import Footer from './Footer'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -12,7 +13,7 @@ function MyApp({ Component, pageProps }) {
       handleAuthChange(event, session)
       if (event === 'SIGNED_IN') {
         setAuthenticatedState('authenticated')
-        router.push('/profile')
+        // router.push('/profile')
       }
       if (event === 'SIGNED_OUT') {
         setAuthenticatedState('not-authenticated')
@@ -38,10 +39,10 @@ function MyApp({ Component, pageProps }) {
     })
   }
   return (
-    <div>
+    <div className={styles.main_wrapp}>
       <nav className={styles.nav}>
         <div className={styles.nav_wrapp}>
-          <b
+          <b className={styles.logo}
             onClick={() => router.push("/")}>
             team<div></div>
           </b>
@@ -72,6 +73,7 @@ function MyApp({ Component, pageProps }) {
           </div>
       </nav>
       <Component {...pageProps} />
+      <Footer />
     </div>
   )
 }
