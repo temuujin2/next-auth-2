@@ -1,6 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
+/* ======= login  ========== */
+.main {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+}
+.main input {
+  border: none;
+  height: 40px;
+  width: 200px;
+  border-radius: 4px;
+  box-shadow: -2px 2px 6px rgb(231, 231, 231);
+}
+.main button {
+  cursor: pointer;
+  border: none;
+  height: 40px;
+  padding: 0 10px;
+  background: var(--button-color);
+  color: var(--button-text);
+  border-radius: 4px;
+}
 /* ========================= */
 .nav {
   display: flex;
@@ -120,6 +143,7 @@
   padding: 10px;
   border-radius: 4px;
   border: none;
+  box-shadow: -2px 2px 6px rgb(231, 231, 231);
 }
 .grid_post {
   display: flex;
@@ -195,7 +219,20 @@
 .profile_post {
   display: flex;
   gap:  20px;
-  
+}
+.post_in_title button {
+  cursor: pointer;
+  border: none;
+  background: var(--button-color);
+  color: var(--button-text);
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+.profile_detail ul{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 /* ========= Footer ============ */
 .footer_wrapp {

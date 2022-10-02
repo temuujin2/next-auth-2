@@ -29,11 +29,13 @@ export default function SignIn() {
         <h1 className={styles.title}>
           Sign In
         </h1>
+        <div>
         <input
           onChange={e => setEmail(e.target.value)}
           style={{ margin: 10 }}
         />
         <button onClick={() => signIn()}>Sign In</button>
+        </div>
        </main>
     </div>
   )
