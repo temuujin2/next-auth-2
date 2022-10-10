@@ -1,9 +1,17 @@
 
 import fetch from "node-fetch";
-import { useState } from "react";
+import axios from "axios";
+
 
 export const getData = async () => {
-    // const [aaa, setAaa] = useState[''];
+    const instance = axios.create({
+      baseURL: `https://dummyapi.io/data/v1/user`,
+      timeout: 2000,
+      headers: {
+        "Content-Type": "application/json; charset=utf-8",
+        "app-id": "63104c3120f6e665ecf628ba",
+      }
+    })
     try {
       const data = await fetch("https://dummyapi.io/data/v1/user", {
         headers: {

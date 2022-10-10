@@ -2,7 +2,6 @@ import styles from '../styles/Home.module.css'
 import Hero from '../images/brooke-cagle.jpg'
 import Image from 'next/image'
 import Meetings from '../images/ootoMeetings1.png'
-import icon from '../images/icon.png'
 
 
 export default function Home() {

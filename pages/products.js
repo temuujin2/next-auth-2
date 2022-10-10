@@ -1,7 +1,8 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import styles from '../styles/Home.module.css'
-import arrow from '../images/chevron_right.png'
+
 
 const defaultEndpoint = `https://rickandmortyapi.com/api/character/`;
 
@@ -76,7 +77,6 @@ export default function Products({data}) {
     });
   }
 
-  console.log('data',data)
   return (
     <div className={styles.post_wrapp} >
       <div className={styles.post_header}>

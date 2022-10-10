@@ -54,7 +54,7 @@ function MyApp({ Component, pageProps }) {
                 Products
               </span>
               <span onClick={() => router.push("/services")}>
-                Services
+                Blog
               </span>
               <span onClick={() => router.push("/contact")}>
                 Contact

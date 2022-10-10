@@ -290,6 +290,31 @@
   height: 8px;
   background: #0BBEF2;
 }
+/* ========= Blog ================= */
+.test_wrapp {
+  height: 400px;
+}
+.blog_post {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.card_blog {
+  width: 200px;
+  height: 250px;
+  background: #d4d4d4;
+}
+.avatar_blog {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 40px;
+  height: 40px;
+}
+/* ========= Contact ================= */
+.contact_wrapp {
+  height: 450px;
+}
 /* ======== responsive sizes ========= */
 @media (max-width: 1200px) {
   .footer_width {

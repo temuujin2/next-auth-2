@@ -1,22 +1,39 @@
-import { supabase } from '../client'
-import { getData } from './api/dataDummy';
-import { DummyApi } from './api/dataDummy';
+/* eslint-disable jsx-a11y/alt-text */
+import axios from 'axios'
+import { useEffect, useState } from 'react'; 
+import styles from '../styles/Home.module.css'
+import Image from 'next/image';
 
+function Services() {
+  const [usersData, setUsersData] = useState()
 
-const data =[{"name":"test1"},{"name":"test2"}];
-
-export default function Services({ user }) {
-  console.log("service-ruu orj irsen data",DummyApi)
-  // console.log({ user })
+  useEffect(() => {
+    axios
+      .get("https://dummyapi.io/data/v1/user", {
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          "app-id": "63104c3120f6e665ecf628ba",
+        },
+        responseType: "json",
+      })
+      .then((response) => {
+      setUsersData(response.data.data)
+        console.log("eee",response)
+      });
+  }, [])
   return (
-    <div style={{ maxWidth: '420px', margin: '96px auto' }}>
-      <ul>
-      {data.map(function(d, idx){
-         return (<li key={idx}>{d.name}
-         </li>)
-       })}
-    </ul>
-       <DummyApi />
+    <div className={styles.blog_post}>
+         {usersData?.map((el, index) => (
+              <div className={styles.card_blog} key={index}>{el.id}
+                <div className={styles.avatar_blog}>
+                  <Image width={40} height={40} src={el.picture}/>
+                </div>
+              </div>
+              
+          
+          ))}
     </div>
-  )
+  );
 }
+
+export default Services;

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import styles from '../../../styles/Home.module.css'
 import Comments from '../../../components/Comment';
@@ -38,7 +39,7 @@ export default function Character({data}) {
             <img src={image} alt={name} />
           </div>
           <div className={styles.profile_detail}>
-            <h2>Character Details</h2>
+            <h2></h2>
             <ul>
               <li>
                 <strong>Name:</strong> { name }
