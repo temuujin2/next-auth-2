@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* ======= login  ========== */
+
 .main {
   height: 50vh;
   display: flex;
@@ -291,25 +292,58 @@
   background: #0BBEF2;
 }
 /* ========= Blog ================= */
+.top_blog {
+  display: flex;
+  width: 100%;
+  margin: 100px 0 40px 0;
+
+}
+.text_top_blog {
+  width: 80%;
+  margin: auto;
+}
+.text_top_blog p {
+  font-size: 15px;
+  font-weight: 300;
+  color: gray;
+}
 .test_wrapp {
   height: 400px;
 }
 .blog_post {
+  margin: auto;
+  width: 90%;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 50px;
   flex-wrap: wrap;
 }
+.blog_bottom_card {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+}
+.blog_bottom_card p {
+  font-size: 12px;
+  font-weight: 300;
+  color: gray;
+}
 .card_blog {
-  width: 200px;
-  height: 250px;
-  background: #d4d4d4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  width: 340px;
+  height: 400px;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0px 10px 15px -3px rgba(163, 163, 163, 0.1);
 }
 .avatar_blog {
   border-radius: 50%;
   overflow: hidden;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
 }
 /* ========= Contact ================= */
 .contact_wrapp {

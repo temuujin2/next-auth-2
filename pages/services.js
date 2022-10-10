@@ -18,21 +18,40 @@ function Services() {
       })
       .then((response) => {
       setUsersData(response.data.data)
-        console.log("eee",response)
       });
   }, [])
   return (
+    <>
+    <div className={styles.top_blog}>
+      <div className={styles.text_top_blog}>
+        <h1>Blog posts</h1>
+        <p>Our latest updates and blogs about managing your  team</p>
+      </div>
+    </div>
     <div className={styles.blog_post}>
+      
          {usersData?.map((el, index) => (
-              <div className={styles.card_blog} key={index}>{el.id}
-                <div className={styles.avatar_blog}>
-                  <Image width={40} height={40} src={el.picture}/>
+              <div className={styles.card_blog} key={index}>{el.title}
+                <div className={styles.blog_bottom_card}>
+                  <div className={styles.avatar_blog}>
+                    <Image width={40} height={40} src={el.picture}/>
+                  </div>
+                  <div>
+                   <p>{el.firstName} {el.lastName}</p>
+                  </div>
+                  <div>
+                   <p>|</p>
+                  </div>
+                  <div>
+                   <p>2nd january, 2022</p>
+                  </div>
                 </div>
               </div>
               
           
           ))}
     </div>
+    </>
   );
 }
 
