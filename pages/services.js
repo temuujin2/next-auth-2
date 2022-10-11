@@ -12,12 +12,13 @@ function Services() {
       .get("https://dummyapi.io/data/v1/user", {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
-          "app-id": "63104c3120f6e665ecf628ba",
+          "app-id": "63350ae2b3ea36a85acba45f",
         },
         responseType: "json",
       })
       .then((response) => {
       setUsersData(response.data.data)
+      console.log(response)
       });
   }, [])
   return (
