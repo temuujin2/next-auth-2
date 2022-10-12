@@ -2,23 +2,30 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'; 
 import styles from '../styles/Home.module.css'
-import Image from 'next/image';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import { Avatar } from '@mui/material';
 
 function Services() {
   const [usersData, setUsersData] = useState()
+  
 
   useEffect(() => {
     axios
-      .get("https://dummyapi.io/data/v1/user", {
+      .get("https://dummyapi.io/data/v1/post", {
         headers: {
           "Content-Type": "application/json; charset=utf-8",
           "app-id": "63350ae2b3ea36a85acba45f",
         },
-        responseType: "json",
+        // responseType: "json",
       })
       .then((response) => {
       setUsersData(response.data.data)
-      console.log(response)
+
       });
   }, [])
   return (
@@ -32,21 +39,29 @@ function Services() {
     <div className={styles.blog_post}>
       
          {usersData?.map((el, index) => (
-              <div className={styles.card_blog} key={index}>{el.title}
-                <div className={styles.blog_bottom_card}>
-                  <div className={styles.avatar_blog}>
-                    <Image width={40} height={40} src={el.picture}/>
-                  </div>
-                  <div>
-                   <p>{el.firstName} {el.lastName}</p>
-                  </div>
-                  <div>
-                   <p>|</p>
-                  </div>
-                  <div>
-                   <p>2nd january, 2022</p>
-                  </div>
-                </div>
+              <div key={index}>
+                <Card sx={{ maxWidth: 345, borderRadius:'15px' }}>
+                  <CardMedia
+                    component="img"
+                    height="160"
+                    image={el.image}
+                    alt="green iguana"
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      {el.tags[2]}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary" sx={{fontWeight:'300'}}>
+                      Lizards are a widespread group of squamate reptiles, with over 6,000
+                      species, ranging across all continents except Antarctica
+                    </Typography>
+                  </CardContent>
+                  <CardActions sx={{gap:'10px', marginTop:'20px'}}>
+                    <Avatar sx={{ width: 35, height: 35 }} src={el.owner.picture}/>
+                    <Typography sx={{fontSize:'12px', color:'gray', fontWeight:'300'}}>{el.owner.firstName} {el.owner.lastName} </Typography>
+                    <Typography sx={{fontSize:'12px', color:'gray', fontWeight:'300'}}>{el.publishDate}</Typography>
+                  </CardActions>
+                </Card>
               </div>
               
           

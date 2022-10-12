@@ -81,7 +81,7 @@ export default function Products({data}) {
     <div className={styles.post_wrapp} >
       <div className={styles.post_header}>
         <div>
-          <h2>Services</h2>
+          <h2>Products</h2>
           <p>Our latest updates and blogs about managing your team</p>
         </div>
         <form className={styles.search_product} onSubmit={handleOnSubmitSearch}>

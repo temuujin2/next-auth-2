@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import styles from '../styles/Home.module.css'
 import Hero from '../images/brooke-cagle.jpg'
 import Image from 'next/image'
